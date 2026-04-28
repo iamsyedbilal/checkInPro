@@ -87,6 +87,7 @@ export default function CabinRow({ cabin }) {
           <button disabled={isCreating} onClick={handleDuplicate}>
             <HiSquare2Stack />
           </button>
+
           <button onClick={() => setShowForm(show => !show)}>
             <HiPencil />
           </button>

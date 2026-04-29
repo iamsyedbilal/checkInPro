@@ -6,12 +6,11 @@ export default function useOutSideClick(close, listenCapturing = true) {
     function handleClick(e) {
       if (ref.current && !ref.current.contains(e.target)) {
         close()
-        console.log('click')
       }
     }
     document.addEventListener('click', handleClick, listenCapturing)
 
     return document.addEventListener('click', handleClick, listenCapturing)
   }, [close, listenCapturing])
-  return { ref }
+  return ref
 }

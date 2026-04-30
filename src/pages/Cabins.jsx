@@ -3,13 +3,14 @@ import Heading from '../ui/Heading'
 import CabinTable from '../features/cabins/CabinTable'
 import AddCabin from '../features/cabins/AddCabin'
 import CreateCabinForm from '../features/cabins/CreateCabinForm'
+import CabinTableOperations from '../features/cabins/CabinTableOperations'
 
 export default function Cabins() {
   return (
     <>
       <Row type="horizontal">
         <Heading as="h1">All Cabins</Heading>
-        <p>filter and sort</p>
+        <CabinTableOperations />
       </Row>
       <Row type="vertical">
         <CabinTable />

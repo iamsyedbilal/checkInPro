@@ -30,3 +30,18 @@ export async function getBookings({ filter, sortBy, page }) {
 
   return { data, count }
 }
+
+export async function getBooking(id) {
+  const { data, error } = await supabase
+    .from('booking')
+    .select('*, cabins(*),guests(*)')
+    .eq('id', id)
+    .single()
+
+  if (error) {
+    console.error('Error fetching bookings:', error)
+    throw new Error('Failed to fetch bookings')
+  }
+
+  return data
+}

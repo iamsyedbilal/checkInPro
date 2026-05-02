@@ -8,8 +8,6 @@ import { useEditSetting } from './useEditSettings'
 export default function UpdateSettingForm() {
   const { isSetting, settings } = useSetttings()
 
-  console.log(settings)
-
   const { editSetting, isUpdating } = useEditSetting()
 
   if (isSetting) return <Spinner />

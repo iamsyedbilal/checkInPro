@@ -6,6 +6,8 @@ import Settings from './Settings'
 import Account from './Account'
 import Login from './Login'
 import PageNotFound from './PageNotFound'
+import Booking from './Booking'
+import CheckIn from './CheckIn'
 
 export {
   Dashboard,
@@ -16,4 +18,6 @@ export {
   Account,
   Login,
   PageNotFound,
+  Booking,
+  CheckIn,
 }

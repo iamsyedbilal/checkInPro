@@ -1,3 +1,4 @@
+import { getToday } from '../utils/helper'
 import supabase from './supabase'
 
 export async function getBookings({ filter, sortBy, page }) {
@@ -69,5 +70,51 @@ export async function deleteBooking(id) {
     throw new Error('Booking could not be deleted')
   }
 
+  return data
+}
+
+export async function getBookingsAfterDate(date) {
+  const { data, error } = await supabase
+    .from('booking')
+    .select('created_at, totalPrice, extraPrice')
+    .gte('created_at', date)
+    .lte('created_at', getToday({ end: true }))
+
+  if (error) {
+    console.error(error)
+    throw new Error('Bookings could not get loaded')
+  }
+
+  return data
+}
+
+export async function getStaysAfterDate(date) {
+  const { data, error } = await supabase
+    .from('booking')
+    .select('*, guests(fullName)')
+    .gte('startDate', date)
+    .lte('startDate', getToday())
+
+  if (error) {
+    console.error(error)
+    throw new Error('Bookings could not get loaded')
+  }
+
+  return data
+}
+
+export async function getStaysTodayActivity() {
+  const { data, error } = await supabase
+    .from('booking')
+    .select('*, guests(fullName, nationality, countryFlag)')
+    .or(
+      `and(status.eq.unconfirmed,startDate.eq.${getToday()}),and(status.eq.checked-in,endDate.eq.${getToday()})`
+    )
+    .order('created_at')
+
+  if (error) {
+    console.error(error)
+    throw new Error('Bookings could not get loaded')
+  }
   return data
 }

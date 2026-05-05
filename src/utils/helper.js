@@ -1,4 +1,4 @@
-import { formatDistance, parseISO } from 'date-fns'
+import { differenceInDays, formatDistance, parseISO } from 'date-fns'
 
 export function formatCurrency(value) {
   return new Intl.NumberFormat('en-US', {
@@ -23,3 +23,6 @@ export const getToday = function (options = {}) {
   else today.setUTCHours(0, 0, 0, 0)
   return today.toISOString()
 }
+
+export const subtractDates = (dateStr1, dateStr2) =>
+  differenceInDays(parseISO(String(dateStr1)), parseISO(String(dateStr2)))

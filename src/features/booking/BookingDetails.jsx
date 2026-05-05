@@ -13,7 +13,7 @@ import { useNavigate } from 'react-router-dom'
 
 import { useMoveBack } from '../../hooks/useMoveBack'
 import { HiArrowDownOnSquare, HiArrowUpOnSquare } from 'react-icons/hi2'
-import { useCheckout } from '../checkin/useCheckOut'
+import { useCheckout } from '../checkin/useCheckout'
 import Modal from '../../ui/Modal'
 import ConfirmDelete from '../../ui/ConfirmDelete'
 import { useDeleteBooking } from './useDeleteBooking'

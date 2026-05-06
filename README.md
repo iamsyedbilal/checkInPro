@@ -6,7 +6,7 @@
 
 ### A full-stack hotel management system built with React and Supabase
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-6366f1?style=for-the-badge&logo=vercel&logoColor=white)](https://checkinpro.vercel.app)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-6366f1?style=for-the-badge&logo=vercel&logoColor=white)](https://check-in-pro-chi.vercel.app)
 [![GitHub](https://img.shields.io/badge/GitHub-Repo-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/iamsyedbilal/checkInPro)
 
 ![Dashboard Preview](public/checkInPro.png)
